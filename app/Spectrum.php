@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Spectrum extends Model
 {
-    protected $table = 'spectrum';
+    protected $table = 'spectrums';
     protected $fillable = ['type_spectrum'];
 
     public function phones(){
