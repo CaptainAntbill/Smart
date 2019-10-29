@@ -14,7 +14,8 @@ class SpectrumController extends Controller
      */
     public function index()
     {
-        //
+        $spectrums = Spectrum::all();
+        return view('spectrum.index', compact('spectrums'));
     }
 
     /**
@@ -24,7 +25,7 @@ class SpectrumController extends Controller
      */
     public function create()
     {
-        //
+        return view('spectrum/create');
     }
 
     /**
@@ -35,7 +36,8 @@ class SpectrumController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $spectrums = Spectrum::create($request->all());
+        return redirect()->route('spectrum.show', compact('spectrums'));
     }
 
     /**
@@ -44,9 +46,10 @@ class SpectrumController extends Controller
      * @param  \App\Spectrum  $spectrum
      * @return \Illuminate\Http\Response
      */
-    public function show(Spectrum $spectrum)
+    public function show($id)
     {
-        //
+        $spectrums = Spectrum::find($id);
+        return view('spectrum.show', compact('spectrums'));
     }
 
     /**
@@ -55,9 +58,10 @@ class SpectrumController extends Controller
      * @param  \App\Spectrum  $spectrum
      * @return \Illuminate\Http\Response
      */
-    public function edit(Spectrum $spectrum)
+    public function edit($id)
     {
-        //
+        $spectrums = Spectrum::findOrFail($id);
+        return view('spectrum.edit', compact('spectrums'));
     }
 
     /**
@@ -67,9 +71,11 @@ class SpectrumController extends Controller
      * @param  \App\Spectrum  $spectrum
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Spectrum $spectrum)
+    public function update(Request $request, $id)
     {
-        //
+        $spectrums = Spectrum::find($id);
+        $spectrums->update($request->all());
+        return view('spectrum.show', compact('spectrums'));
     }
 
     /**
