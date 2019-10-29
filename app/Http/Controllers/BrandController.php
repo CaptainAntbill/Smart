@@ -14,7 +14,8 @@ class BrandController extends Controller
      */
     public function index()
     {
-        //
+        $brands = Brand::all();
+        return view('brand.index', compact('brands'));
     }
 
     /**
@@ -24,7 +25,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        return view('brand/create');
     }
 
     /**
@@ -35,7 +36,8 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $brands = Brand::create($request->all());
+        return redirect()->route('brand.show', compact('brands'));
     }
 
     /**
@@ -44,9 +46,10 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function show(Brand $brand)
+    public function show($id)
     {
-        //
+        $brands = Brand::find($id);
+        return view('brand.show', compact('brands'));
     }
 
     /**
@@ -55,9 +58,10 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Brand $brand)
+    public function edit($id)
     {
-        //
+        $brands = Brand::findOrFail($id);
+        return view('brand.edit', compact('brands'));
     }
 
     /**
@@ -67,9 +71,11 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Brand $brand)
+    public function update(Request $request, $id)
     {
-        //
+        $brands = Brand::find($id);
+        $brands->update($request->all());
+        return view('brand.show', compact('brands'));
     }
 
     /**
@@ -78,8 +84,10 @@ class BrandController extends Controller
      * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Brand $brand)
+    public function destroy($id)
     {
-        //
+        Brand::find($id->delete());
+        $teacher = Teacher::all();
+        return view('brand.index', compact('brands'));
     }
 }
