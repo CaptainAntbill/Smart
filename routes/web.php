@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('brand', 'BrandController');
+Route::resource('spectrum', 'SpectrumController');
