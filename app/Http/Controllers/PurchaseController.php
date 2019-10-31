@@ -14,7 +14,8 @@ class PurchaseController extends Controller
      */
     public function index()
     {
-        //
+        $purchase = Purchase::all();
+        return view('purchase.index', compact('purchase'));
     }
 
     /**
@@ -24,7 +25,7 @@ class PurchaseController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
