@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::resource('brand', 'BrandController');
 Route::resource('spectrum', 'SpectrumController');
+Route::resource('provider', 'ProviderController');
+Route::resource('phone', 'PhoneController');
+Route::resource('purchase', 'PurchaseController');
