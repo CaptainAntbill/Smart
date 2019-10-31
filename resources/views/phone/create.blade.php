@@ -21,7 +21,6 @@
             <option value="{{$spectrum['id']}}"> {{$spectrum['type_spectrum']}} </option>
             @endforeach
         </select>
-
         <select name="brand_id" class="select">
             @foreach($brand as $brand)
                 <option value="{{$brand['id']}}"> {{$brand['name']}} </option>
@@ -29,7 +28,5 @@
         </select>
         <input type="submit" value="Enviar" class="button is-primary">
     </form>
-
 </body>
-
 </html>
