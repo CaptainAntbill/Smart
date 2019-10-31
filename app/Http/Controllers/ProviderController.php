@@ -14,7 +14,8 @@ class ProviderController extends Controller
      */
     public function index()
     {
-        //
+        $providers = Provider::all();
+        return view('provider.index', compact('providers'));
     }
 
     /**
@@ -24,7 +25,7 @@ class ProviderController extends Controller
      */
     public function create()
     {
-        //
+        return view('provider/create');
     }
 
     /**
@@ -35,7 +36,8 @@ class ProviderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $providers = Provider::create($request->all());
+        return redirect()->route('provider.show', compact('providers'));
     }
 
     /**
@@ -44,9 +46,10 @@ class ProviderController extends Controller
      * @param  \App\Provider  $provider
      * @return \Illuminate\Http\Response
      */
-    public function show(Provider $provider)
+    public function show($id)
     {
-        //
+        $providers = Provider::find($id);
+        return view('provider.show', compact('providers'));
     }
 
     /**
@@ -55,9 +58,10 @@ class ProviderController extends Controller
      * @param  \App\Provider  $provider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Provider $provider)
+    public function edit($id)
     {
-        //
+        $providers = Provider::findOrFail($id);
+        return view('provider.edit', compact('providers'));
     }
 
     /**
@@ -67,9 +71,11 @@ class ProviderController extends Controller
      * @param  \App\Provider  $provider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Provider $provider)
+    public function update(Request $request, $id)
     {
-        //
+        $providers = Provider::find($id);
+        $providers->update($request->all());
+        return view('provider.show', compact('providers'));    
     }
 
     /**
