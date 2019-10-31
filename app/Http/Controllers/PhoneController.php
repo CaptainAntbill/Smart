@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Spectrum;
 use App\Phone;
+use App\Brand;
 use Illuminate\Http\Request;
 
 class PhoneController extends Controller
@@ -14,7 +15,8 @@ class PhoneController extends Controller
      */
     public function index()
     {
-        //
+        $phone = Phone::all();
+        return view('phone.index', compact('phone'));
     }
 
     /**
@@ -24,7 +26,10 @@ class PhoneController extends Controller
      */
     public function create()
     {
-        //
+        $spectrum = Spectrum::all();
+        $brand = Brand::all();
+        return view ('phone.create', compact('spectrum','brand'));
+       
     }
 
     /**
@@ -35,7 +40,8 @@ class PhoneController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $phones = Phone::create($request->all());
+        return redirect()->route('phone.show', compact('phones'));
     }
 
     /**
@@ -44,9 +50,12 @@ class PhoneController extends Controller
      * @param  \App\Phone  $phone
      * @return \Illuminate\Http\Response
      */
-    public function show(Phone $phone)
+    public function show($id)
     {
-        //
+        $spectrum = Spectrum::all();
+        $brand = Brand::all();
+        $phones = Phone::find($id);
+        return view('phone.show', compact('phones'));
     }
 
     /**
@@ -55,9 +64,11 @@ class PhoneController extends Controller
      * @param  \App\Phone  $phone
      * @return \Illuminate\Http\Response
      */
-    public function edit(Phone $phone)
+    public function edit($id)
     {
-        //
+        
+        $phones = Phone::findOrFail($id);
+        return view('phone.edit', compact('phones'));
     }
 
     /**
@@ -67,9 +78,14 @@ class PhoneController extends Controller
      * @param  \App\Phone  $phone
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Phone $phone)
+    public function update(Request $request, $id)
     {
-        //
+
+        $spectrum = Spectrum::all();
+        $brand = Brand::all();
+        $phones = Phone::find($id);
+        $phones->update($request->all());
+        return view('phone.show', compact('phones'));
     }
 
     /**
