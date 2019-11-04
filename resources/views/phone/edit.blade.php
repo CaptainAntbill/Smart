@@ -23,6 +23,11 @@
             <option value="{{$brand['id']}}"> {{$brand['name']}} </option>
             @endforeach
         </select>
+        <select name="spectrum_id" class="select">
+            @foreach($spectrum as $spectrum)
+            <option value="{{$spectrum['id']}}"> {{$spectrum['type_spectrum']}} </option>
+            @endforeach
+        </select>
         <input type="submit" value="Enviar">
     </form>
 
