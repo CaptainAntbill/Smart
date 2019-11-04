@@ -66,9 +66,11 @@ class PhoneController extends Controller
      */
     public function edit($id)
     {
-        
+
+        $spectrum = Spectrum::all();
+        $brand = Brand::all();
         $phones = Phone::findOrFail($id);
-        return view('phone.edit', compact('phones'));
+        return view('phone.edit', compact('phones', 'brand', 'spectrum'));
     }
 
     /**
@@ -85,7 +87,7 @@ class PhoneController extends Controller
         $brand = Brand::all();
         $phones = Phone::find($id);
         $phones->update($request->all());
-        return view('phone.show', compact('phones'));
+        return view('phone.show', compact('phones','brand', 'spectrum'));
     }
 
     /**
