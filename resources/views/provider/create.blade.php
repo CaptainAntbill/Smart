@@ -14,8 +14,8 @@
     <form action="{{ route('provider.store') }}" method="post">
         {{ csrf_field() }}
         <input type="text" name="name" required placeholder="Nombre Proveedor" value=""><br>
-        <input type="text" name="name" required placeholder="Direccion" value=""><br>
-        <input type="text" name="name" required placeholder="Telefono" value=""><br>
+        <input type="text" name="addres" required placeholder="Direccion" value=""><br>
+        <input type="text" name="phone" required placeholder="Telefono" value=""><br>
         <input type="submit" value="Enviar">
     </form>
 
