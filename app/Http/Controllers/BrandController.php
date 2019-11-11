@@ -86,8 +86,6 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        Brand::find($id->delete());
-        $teacher = Teacher::all();
-        return view('brand.index', compact('brands'));
+        
     }
 }
