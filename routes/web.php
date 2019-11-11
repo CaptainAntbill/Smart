@@ -22,3 +22,4 @@ Route::resource('phone', 'PhoneController');
 Route::resource('purchase', 'PurchaseController');
 Route::resource('accessory', 'AccessoryController');
 Route::resource('purchase_accessory', 'PurchaseAccessoryController');
+Route::resource('client', 'ClientController');
