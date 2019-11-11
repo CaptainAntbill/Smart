@@ -10,9 +10,10 @@
 </head>
 
 <body>
-    <form action="{{ route('brand.store') }}" method="post">
+    <form action="{{ route('client.store') }}" method="post">
         {{ csrf_field() }}
         <input type="text" name="name" required placeholder="Nombre Completo" value=""><br>
+        <input type="text" name="phone" required placeholder="Telefono" value=""><br>
         <input type="submit" value="Enviar">
     </form>
 
