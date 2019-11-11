@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Accessory;
+use App\Brand;
 use App\Provider;
 use App\PurchaseAccessory;
 use Illuminate\Http\Request;
@@ -16,8 +17,10 @@ class PurchaseAccessoryController extends Controller
      */
     public function index()
     {
-        $purchase = PurchaseAccessory::all();
-        return view('purchase_accesory.index', compact('purchase'));
+        $accessory = Accessory::all();
+        $brand = Brand::all();
+        $purchases = PurchaseAccessory::all();
+        return view('purchase_accessory.index', compact('purchases'));
     }
 
     /**
@@ -29,7 +32,7 @@ class PurchaseAccessoryController extends Controller
     {
         $provider = Provider::all();
         $accessory = Accessory::all();
-        return view('purchase.create', compact('provider', 'accessory'));
+        return view('purchase_accessory.create', compact('provider', 'accessory'));
     }
 
     /**
@@ -40,6 +43,8 @@ class PurchaseAccessoryController extends Controller
      */
     public function store(Request $request)
     {
+        $provider = Provider::all();
+        $accessory = Accessory::all();
         $purchases = PurchaseAccessory::create($request->all());
         return redirect()->route('purchase_accessory.show', compact('purchases'));
     }
@@ -81,9 +86,9 @@ class PurchaseAccessoryController extends Controller
     {
         $provider = Provider::all();
         $accessory = Accessory::all();
-        $purchase = PurchaseAccessory::find($id);
-        $purchase->update($request->all());
-        return view('purchase_accessory.show', compact('provider', 'accessory', 'purchase'));
+        $purchases = PurchaseAccessory::find($id);
+        $purchases->update($request->all());
+        return view('purchase_accessory.show', compact('provider', 'accessory', 'purchases'));
     }
 
     /**
