@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Document</title>
 </head>
 
 <body>
     <dl>
-        <dt>Nombre</dt><dd>{{ $brands->name }}</dd>
+        <dt>Nombre</dt>
+        <dd>{{ $brands->name }}</dd>
     </dl>
     <a href="{{ route('brand.index') }}">Lista</a>
 </body>
