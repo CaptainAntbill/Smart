@@ -8,27 +8,44 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>Document</title>
 </head>
-
-<body>
+<body><br>
+    <div class="container">
+        <div class="hero is-link">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-1">Marcas</h1>
+                </div>
+            </div>
+        </div>
+    </div> <br>
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/brand">Marcas</a></li>
+            </ul>
+    </nav>
     <div class="container">
         <div class="notification">
-            <table class="table is-fullwidth">
-                <tr>
-                    <th>Nombre Completo</th>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                </tr>
-                @foreach($brands as $c)
-                <tr>
-                    <td>{{ $c->name }}</td>
-                    <td><a href="{{ route('brand.create') }}">Nuevo</a></td>
-                    <td><a href="{{ route('brand.show', $c->id) }}">Detalle</a></td>
-                    <td><a href="{{ route('brand.edit', $c->id) }}">Editar</a></td>
-                </tr>
-                @endforeach
+            <div class="level">
+                <div class="level-left">
+                    <a class="button is-info" href="{{ route('brand.create') }}">Nuevo</a>
+                </div>
+            </div>
+            <table class=" table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                    @foreach($brands as $c)
+                    <tr>
+                        <td><a href="{{ route('brand.show', $c->id) }}">{{ $c->name }}</td></a>
+                    </tr>
+                    @endforeach
+                    </tbody>
             </table>
-        </div>
+        </div><br>
     </div>
 </body>
 
