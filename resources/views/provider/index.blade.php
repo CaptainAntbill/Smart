@@ -8,30 +8,49 @@
     <title>Document</title>
 </head>
 
-<body>
+<body><br>
+    <div class="container">
+        <div class="hero is-link">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-1">Proveedores</h1>
+                </div>
+            </div>
+        </div>
+    </div> <br>
+    <nav class="breadcrumb has-bullet-separator">
+        <div class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/provider">Proveedores</a></li>
+            </ul>
+    </nav>
     <div class="container">
         <div class="notification">
-            <table class="table is-fullwidth">
-                <tr>
-                    <th>Nombre Completo</th>
-                    <th>Direccion</th>
-                    <th>Telefono</th>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                </tr>
-                @foreach($providers as $c)
-                <tr>
-                    <td>{{ $c->name }}</td>
-                    <td>{{ $c->addres }}</td>
-                    <td>{{ $c->phone }}</td>
-                    <td><a href="{{ route('provider.create') }}">Nuevo</a></td>
-                    <td><a href="{{ route('provider.show', $c->id) }}">Detalle</a></td>
-                    <td><a href="{{ route('provider.edit', $c->id) }}">Editar</a></td>
-                </tr>
-                @endforeach
+            <div class="level">
+                <div class="level-left">
+                    <a class="button is-info" href="{{ route('provider.create') }}">Nuevo</a>
+                </div>
+            </div>
+            <table class=" table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th></th>
+                    </tr>
+                    @foreach($providers as $c)
+                    <tr>
+                        <td><a href="{{ route('provider.show', $c->id) }}">{{ $c->name }}</td></a>
+                        <td>{{ $c->addres }}</td>
+                        <td>{{ $c->phone }}</td>
+                        <td></td>
+                    </tr>
+                    @endforeach
+                    </tbody>
             </table>
-        </div>
+        </div><br>
     </div>
 </body>
 
