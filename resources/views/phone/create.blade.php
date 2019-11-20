@@ -1,4 +1,4 @@
-<html lang="en">
+<html style="background-color:#1d2533" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,25 +8,66 @@
     <title>Document</title>
 </head>
 
-<body>
-    <br>
-    <form action="{{ route('phone.store') }}" method="post">
-        {{ csrf_field() }}
-        <input type="text" name="model" required placeholder="Modelo" value="" class="input"><br><br>
-        <input type="text" name="quantity" required placeholder="Cantidad" value="" class="input"><br><br>
-        <input type="text" name="price" required placeholder="Price" value="" class="input"><br><br>
-
-        <select name="spectrum_id" class="select">
-            @foreach($spectrum as $spectrum)
-            <option value="{{$spectrum['id']}}"> {{$spectrum['type_spectrum']}} </option>
-            @endforeach
-        </select>
-        <select name="brand_id" class="select">
-            @foreach($brand as $brand)
-                <option value="{{$brand['id']}}"> {{$brand['name']}} </option>
-            @endforeach
-        </select>
-        <input type="submit" value="Enviar" class="button is-primary">
-    </form>
+<body><br>
+    <div class="container">
+        <div class="hero is-success is-bold">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-1">Nuevo Dispositivo</h1>
+                </div>
+            </div>
+        </div>
+    </div> <br>
+    <nav class="breadcrumb is-medium has-bullet-separator">
+        <div class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/phone">Smartphones</a></li>
+                <li><a href="#">Agregar</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="notification">
+            <form action="{{ route('phone.store') }}" method="post">
+                {{ csrf_field() }}
+                <div class="field">
+                    <label for="name" class="label">Nombre</label>
+                    <div class="control">
+                        <input type="text" name="model" class="input" required pattern="[a-zA-Z0-9_ ]{5,50}$">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="punteo" class="label">Cantidad</label>
+                    <div class="control">
+                        <input type="text" name="quantity" class="input" required ">
+                </div>
+            </div>
+            <div class=" field">
+                        <label for="punteo" class="label">Precio</label>
+                        <div class="control">
+                            <input type="text" name="price" class="input" required>
+                        </div>
+                    </div>
+                    <select name="brand_id" class="select">
+                        @foreach($brand as $brand)
+                        <option value="{{$brand['id']}}"> {{$brand['name']}} </option>
+                        @endforeach
+                    </select>
+                    <select name="spectrum_id" class="select">
+                        @foreach($spectrum as $spectrum)
+                        <option value="{{$spectrum['id']}}"> {{$spectrum['type_spectrum']}} </option>
+                        @endforeach
+                    </select>
+                    <div class=" field">
+                        <div class="control"><br>
+                            <button type="submit" class="button is-info">
+                                Enviar
+                            </button>
+                        </div>
+                    </div>
+            </form>
+        </div><br><br>
 </body>
+
 </html>
