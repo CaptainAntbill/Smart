@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +6,50 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Document</title>
 </head>
-
-<body>
+<body><br>
+    <div class="container">
+        <div class="hero is-link">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title is-1">Accesorios</h1>
+                </div>
+            </div>
+        </div>
+    </div> <br>
+    <nav class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/accessory">Accesorios</a></li>
+            </ul>
+    </nav>
     <div class="container">
         <div class="notification">
-            <table class="table is-fullwidth">
-                <tr>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Cantidad</th>
-                    <th>Marca</th>
-                    <th> </th>
-                    <th> </th>
-                    <th> </th>
-                </tr>
-                @foreach($accessory as $c)
-                <tr>
-                    <td>{{ $c->name }}</td>
-                    <td>{{ $c->price }}</td>
-                    <td>{{ $c->quantity }}</td>
-                    <td>{{ $c->brand->name }}</td>
-                    <td><a href="{{ route('accessory.create') }}">Nuevo</a></td>
-                    <td><a href="{{ route('accessory.show', $c->id) }}">Detalle</a></td>
-                    <td><a href="{{ route('accessory.edit', $c->id) }}">Editar</a></td>
-                </tr>
-                @endforeach
+            <div class="level">
+                <div class="level-left">
+                    <a class="button is-info" href="{{ route('accessory.create') }}">Nuevo</a>
+                </div>
+            </div>
+            <table class=" table is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Marca</th>
+                        <th></th>
+                    </tr>
+                    @foreach($accessory as $c)
+                    <tr>
+                        <td><a href="{{ route('accessory.show', $c->id) }}">{{ $c->name }}</td></a>
+                        <td>{{ $c->price }}</td>
+                        <td>{{ $c->quantity }}</td>
+                        <td>{{ $c->brand->name }}</td>
+                    </tr>
+                    @endforeach
+                    </tbody>
             </table>
-        </div>
+        </div><br>
     </div>
 </body>
 
