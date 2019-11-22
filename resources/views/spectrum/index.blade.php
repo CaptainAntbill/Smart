@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="background-color:#1d2533" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Document</title>
 </head>
+
 <body><br>
     <div class="container">
-        <div class="hero is-link">
+        <div class="hero is-success is-bold">
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title is-1">Tipos de Gamma</h1>
@@ -18,7 +19,7 @@
             </div>
         </div>
     </div> <br>
-    <nav class="breadcrumb">
+    <nav class="breadcrumb is-medium has-bullet-separator">
         <div class="container">
             <ul>
                 <li><a href="/">Home</a></li>
