@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="background-color:#1d2533" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,10 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Document</title>
 </head>
+
 <body><br>
     <div class="container">
-        <div class="hero is-link">
+        <div class="hero is-success">
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title is-1">Nueva Marca</h1>
@@ -17,7 +19,7 @@
             </div>
         </div>
     </div> <br>
-    <nav class="breadcrumb">
+    <nav class="breadcrumb is-medium breadcrumb has-bullet-separator">
         <div class="container">
             <ul>
                 <li><a href="/">Home</a></li>
@@ -35,17 +37,17 @@
                     <div class="control">
                         <input type="text" name="name" class="input" required pattern="[a-zA-Z0-9_ ]{5,50}$">
                     </div>
-                </div>                
+                </div>
                 <div class=" field">
                     <div class="control"><br>
-                    <button type="submit" class="button is-info">
-                        Enviar
-                    </button>
+                        <button type="submit" class="button is-info">
+                            Enviar
+                        </button>
+                    </div>
                 </div>
-            </div>
         </div><br><br>
-    </form>
-</div>
+        </form>
+    </div>
 </body>
 
 </html>

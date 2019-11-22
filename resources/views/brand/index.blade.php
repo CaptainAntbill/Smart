@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html style="background-color:#1d2533" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +9,10 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <title>Document</title>
 </head>
+
 <body><br>
     <div class="container">
-        <div class="hero is-link">
+        <div class="hero is-success is-bold">
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title is-1">Marcas</h1>
@@ -18,7 +20,7 @@
             </div>
         </div>
     </div> <br>
-    <nav class="breadcrumb">
+    <nav class="breadcrumb is-medium breadcrumb has-bullet-separator">
         <div class="container">
             <ul>
                 <li><a href="/">Home</a></li>
