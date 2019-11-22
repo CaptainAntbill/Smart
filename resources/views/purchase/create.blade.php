@@ -1,4 +1,5 @@
-<html lang="en">
+<html style="background-color:#1d2533" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,9 +7,10 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <title>Document</title>
 </head>
+
 <body><br>
     <div class="container">
-        <div class="hero is-link">
+        <div class="hero is-success is-bold">
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title is-1">Nueva Orden</h1>
@@ -16,12 +18,11 @@
             </div>
         </div>
     </div> <br>
-    <nav class="breadcrumb has-bullet-separator">
+    <nav class="breadcrumb is-medium has-bullet-separator">
         <div class="container">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/purchase">Pedidos</a></li>
-                <li><a href="#">Agregar</a></li>
             </ul>
         </div>
     </nav>
@@ -67,4 +68,5 @@
             </form>
         </div><br><br>
 </body>
+
 </html>
