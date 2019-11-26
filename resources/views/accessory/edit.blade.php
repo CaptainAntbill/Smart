@@ -14,7 +14,8 @@
         <div class="hero is-success is-bold">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1">Editar Accesorio</h1>
+                    <h1 class="title is-3">Accesorio: {{$accessories->name }}</h1>
+                    <h1 class="title is-3">Marca: {{ $accessories->brand['name'] }}</h1>
                 </div>
             </div>
         </div>

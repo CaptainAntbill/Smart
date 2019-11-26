@@ -40,7 +40,7 @@
                 <div class="column">
                 </div>
                 <div class="column ">
-                    <a class="button is-info is-three-half" href="{{ route('accessory.edit', $accessories->id) }}">Editar Cliente</a>
+                    <a class="button is-info is-three-half" href="{{ route('accessory.edit', $accessories->id) }}">Editar Accesorio</a>
                     <a class="button is-info is-pulled-right" href="{{ route('accessory.index') }}"> Ir a Lista</a>
                 </div>
             </div>

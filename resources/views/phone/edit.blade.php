@@ -14,7 +14,9 @@
         <div class="hero is-success is-bold">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1">Editar Dispositivo</h1>
+                    <h1 class="title is-3">Modelo: {{$phones->model }}</h1>
+                    <h1 class="title is-3">Marca: {{ $phones->brand['name']}}</h1>
+                    <h1 class="title is-3">Gama: {{ $phones->spectrum['type_spectrum'] }}</h1>
                 </div>
             </div>
         </div>
