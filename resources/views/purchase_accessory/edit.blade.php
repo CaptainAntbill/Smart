@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html style="background-color:#1d2533" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +14,12 @@
         <div class="hero is-success is-bold">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1">Editar Registro</h1>
+                    <h1 class="title is-3">
+                       Accesorio: {{ $purchase->accessory['name']}}
+                    </h1>
+                    <h1 class="title is-3">
+                       Proveedor: {{ $purchase->provider['name']}}
+                    </h1>
                 </div>
             </div>
         </div>
@@ -23,7 +29,6 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/purchase">Pedidos</a></li>
-                <li><a href="#">Agregar</a></li>
             </ul>
         </div>
     </nav>

@@ -14,7 +14,8 @@
         <div class="hero is-success is-bold">
             <div class="hero-body">
                 <div class="container">
-                    <h1 class="title is-1">Editar Registro</h1>
+                    <h2 class="title is-3">Dispositivo: {{ $purchases->phone['model']}}</h2>
+                    <h2 class="title is-3">Proveedor: {{ $purchases->provider['name']}}</h2>
                 </div>
             </div>
         </div>
