@@ -23,7 +23,7 @@
         <div class="container">
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/brand">Gama</a></li>
+                <li><a href="/spectrum">Gama</a></li>
             </ul>
         </div>
     </nav>
