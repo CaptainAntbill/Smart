@@ -53,7 +53,7 @@
             <div class=" field">
                             <label for="punteo" class="label">Fecha</label>
                             <div class="control">
-                                <input type="text" name="date_order" value="{{ $purchase->date_order }}" class="input" required>
+                                <input type="date" name="date_order" value="{{ $purchase->date_order }}" class="input" required>
                             </div>
                         </div>
                         <select name="provider_id" class="select">

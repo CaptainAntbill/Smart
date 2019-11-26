@@ -44,7 +44,7 @@
                 <div class="field">
                     <label for="punteo" class="label">Cantidad</label>
                     <div class="control">
-                        <input type="text" name="quantity" value="{{ $accessories->quantity }}" input" required ">
+                        <input type="text" name="quantity" value="{{ $accessories->quantity }}" class="input" required ">
                 </div>
             </div>
             <div class=" field">
